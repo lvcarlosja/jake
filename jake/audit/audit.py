@@ -63,11 +63,13 @@ class Audit():
     """
     if len(coordinate.get_vulnerabilities()) == 0:
       if not self._quiet:
-        self.do_print("[{}/{}] - {} - no known vulnerabilities for this version"
-                      .format(
-                          number,
-                          length,
-                          coordinate.get_coordinates()), 0)
+        self.do_print(
+                f"[{number}/{length}] - {coordinate.get_coordinates()} - no known vulnerabilities for this version", 0)
+        # self.do_print("[{}/{}] - {} - no known vulnerabilities for this version"
+                      # .format(
+                          # number,
+                          # length,
+                          # coordinate.get_coordinates()), 0)
       return len(coordinate.get_vulnerabilities())
 
     self.do_print(("[{}/{}] - {} [VULNERABLE] {} known vulnerabilities for"
